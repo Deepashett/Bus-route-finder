@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bus Route Finder</title>
+<style>
+body{
+font-family:Arial;
+background:#f4f4f4;
+text-align:center;
+margin:0;
+}
+header{
+background:#0077b6;
+color:white;
+padding:20px;
+}
+.container{
+background:white;
+width:350px;
+margin:40px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+select,button{
+width:100%;
+padding:10px;
+margin:10px 0;
+font-size:16px;
+}
+button{
+background:#0077b6;
+color:white;
+border:none;
+cursor:pointer;
+}
+button:hover{
+background:#023e8a;
+}
+#result{
+margin-top:20px;
+font-weight:bold;
+color:green;
+}
+footer{
+margin-top:40px;
+padding:15px;
+background:#0077b6;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚌 Bus Route Finder</h1>
+<p>Find Your Bus Route Easily</p>
+</header>
+
+<div class="container">
+
+<label><b>From</b></label>
+<select id="from">
+<option>Kulur</option>
+<option>Surathkal</option>
+<option>Lalbagh</option>
+<option>Kankanady</option>
+</select>
+
+<label><b>To</b></label>
+<select id="to">
+<option>Kavoor</option>
+<option>State Bank</option>
+<option>Yenepoya University</option>
+<option>Panambur</option>
+</select>
+
+<button onclick="findRoute()">Find Route</button>
+
+<div id="result"></div>
+
+</div>
+
+<footer>
+BCA Mini Project | Bus Route Finder
+</footer>
+
+<script>
+function findRoute(){
+
+let from=document.getElementById("from").value;
+let to=document.getElementById("to").value;
+let result=document.getElementById("result");
+
+if(from==to){
+result.innerHTML="Start and Destination cannot be same.";
+}
+else{
+result.innerHTML=
+"<h3>Route Found!</h3>" +
+"From : "+from+"<br>" +
+"To : "+to+"<br><br>" +
+"🚌 Bus No : 45A<br>" +
+"⏱ Time : 30 Minutes<br>" +
+"💰 Fare : ₹15";
+}
+
+}
+</script>
+
+</body>
+</html>
